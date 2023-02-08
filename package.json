@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/liyumk"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple custom React component libraries",
   "scripts": {
     "rollup": "rollup -c",
@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "",
+  "author": "Liyu Mesfn",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.12",
