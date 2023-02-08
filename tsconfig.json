@@ -107,6 +107,12 @@
         "outDir": "dist",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "emitDeclarationOnly": true /* Skip type checking all .d.ts files. */
+        "emitDeclarationOnly": true /* Skip type checking all .d.ts files. */,
+        "plugins": [
+            {
+                "name": "typescript-styled-plugin",
+                "tags": ["styled", "css" /*and others that you like it!*/]
+            }
+        ]
     }
 }
