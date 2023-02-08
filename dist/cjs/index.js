@@ -1,0 +1,2 @@
+"use strict";var e=require("react");!function(e,t){void 0===t&&(t={});var n=t.insertAt;if(e&&"undefined"!=typeof document){var r=document.head||document.getElementsByTagName("head")[0],d=document.createElement("style");d.type="text/css","top"===n&&r.firstChild?r.insertBefore(d,r.firstChild):r.appendChild(d),d.styleSheet?d.styleSheet.cssText=e:d.appendChild(document.createTextNode(e))}}("button {\r\n  font-size: 60px\r\n}");exports.Button=t=>e.createElement("button",null,t.label);
+//# sourceMappingURL=index.js.map
