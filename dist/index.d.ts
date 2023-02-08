@@ -1,7 +1,8 @@
 /// <reference types="react" />
-interface ButtonProps {
-    label: string;
+interface ProgressBarProps {
+    value: number;
+    showNumber?: boolean;
 }
-declare const Button: (props: ButtonProps) => JSX.Element;
+declare const ProgressBar: ({ value, showNumber }: ProgressBarProps) => JSX.Element;
 
-export { Button };
+export { ProgressBar };
