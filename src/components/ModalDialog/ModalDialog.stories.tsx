@@ -43,5 +43,5 @@ Primary.args = {
         </ModalFooter>,
     ],
 
-    width: 500,
+    width: 30,
 };
