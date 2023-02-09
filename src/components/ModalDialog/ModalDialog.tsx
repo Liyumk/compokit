@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { ModalWrapper, MainWrapperStyle } from "./ModalDialog.styled";
 import GlobalStyleWrapper from "../GlobalStyleWrapper/GlobalStyleWrapper";
 import { modalWidthConverter } from "../../utils/modalWidthConverter";
+
 export interface ModalDialogProps {
     children: ReactNode;
     height?: number | string;
