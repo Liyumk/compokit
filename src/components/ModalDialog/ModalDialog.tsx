@@ -1,24 +1,20 @@
 import React, { ReactNode } from "react";
 import { ModalWrapper, MainWrapperStyle } from "./ModalDialog.styled";
-import { createContext } from "react";
 import GlobalStyleWrapper from "../GlobalStyleWrapper/GlobalStyleWrapper";
-import ModalWidthConverter from "../../utils/ModalWidthConverter";
+import { modalWidthConverter } from "../../utils/modalWidthConverter";
 
 export interface ModalDialogProps {
     children: ReactNode;
     height?: number | string;
     width?: string | number | null;
-    // onClose: () => void;
 }
-
-const ModalDialogContext = createContext({});
 
 const ModalDialog = (props: ModalDialogProps) => {
     let { children, height, width } = props;
 
     const checkType = () => {
         return typeof width === "string"
-            ? ModalWidthConverter(width)
+            ? modalWidthConverter(width)
             : typeof width === "number"
             ? width
             : null;
