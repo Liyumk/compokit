@@ -6,6 +6,7 @@ import ModalDialog, { ModalDialogProps } from "./ModalDialog";
 import ModalHeader from "./ModalHeader/ModalHeader";
 import ModalBody from "./ModalBody/ModalBody";
 import ModalFooter from "./ModalFooter/ModalFooter";
+import { Button } from "../Button";
 
 export default {
     title: "Modal Dialog",
@@ -38,10 +39,14 @@ Primary.args = {
             pulvinar, in dapibus velit iaculis. Nullam ac scelerisque erat.
         </ModalBody>,
         <ModalFooter>
-            <button>hey </button>
-            <button>where are </button>
+            <Button minWidth={8} title="Cancel" onClick={() => null}></Button>
+            <Button
+                minWidth={8}
+                title="Accept"
+                appearance="info"
+                onClick={() => null}
+            ></Button>
         </ModalFooter>,
     ],
-
     width: 30,
 };

@@ -2,6 +2,6 @@ import styled from "styled-components";
 
 export const BodyText = styled.p`
     font-size: 14px;
-    inline-height: 2px;
+    line-height: 1.3rem;
     margin: 0;
 `;

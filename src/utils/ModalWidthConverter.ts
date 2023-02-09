@@ -1,4 +1,4 @@
-export default (value: string | undefined) => {
+export const modalWidthConverter =  (value: string | undefined) => {
   switch(value){
     case 'small':
       return 20
