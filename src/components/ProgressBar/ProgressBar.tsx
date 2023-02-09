@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper, Filler, Indicator } from "./style";
+import { Wrapper, Filler, Indicator } from "./ProgressBar.styled";
 
 export interface ProgressBarProps {
     value: number;
