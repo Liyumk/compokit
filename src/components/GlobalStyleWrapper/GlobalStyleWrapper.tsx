@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { GlobalStyles } from "../../../globalstyles";
+import { GlobalStyles } from "../../globalstyles";
 
 export interface GlobalStyleWrapperProps {
     children: ReactNode;
