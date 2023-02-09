@@ -6,7 +6,7 @@ import ModalDialog, { ModalDialogProps } from "./ModalDialog";
 import ModalHeader from "./ModalHeader/ModalHeader";
 import ModalBody from "./ModalBody/ModalBody";
 import ModalFooter from "./ModalFooter/ModalFooter";
-import { Button } from "../Button";
+import Button from "../Button";
 
 export default {
     title: "Modal Dialog",
