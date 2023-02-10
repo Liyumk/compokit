@@ -1,6 +1,6 @@
-import { Appearance } from "../components/Button/Button"
+import { Appearance } from "../common/types"
 
-export const buttonAppearance = (value: Appearance | undefined) => {
+export const appearanceConverter = (value: Appearance | undefined) => {
   switch(value){
     case 'success':
       return '#4CAF50';
