@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
 import { Btn } from "./Button.styled";
 import GlobalStyleWrapper from "../GlobalStyleWrapper/GlobalStyleWrapper";
-import { buttonAppearance } from "../../utils/buttonAppearance";
-
-export type Appearance = "success" | "danger" | "warning" | "info" | "idle";
+import { appearanceConverter } from "../../utils/appearanceConverter";
+import { Appearance } from "../../common/types";
 
 export interface ButtonProps {
     title: string;
@@ -28,7 +27,7 @@ const Button = (props: ButtonProps) => {
         onClick,
     } = props;
 
-    const appVal = buttonAppearance(appearance);
+    const appVal = appearanceConverter(appearance);
 
     return (
         <GlobalStyleWrapper>
