@@ -3,6 +3,7 @@ import {
     avatarAppearance,
     imageSizeInRem,
 } from "../../utils/avatarAttributesConverter";
+import { MdBorderColor } from "react-icons/md";
 
 export type Appearance = "circle" | "square";
 export type Size = "small" | "medium" | "large";
@@ -16,7 +17,13 @@ export interface AvatarProps {
 }
 
 const Avatar = (props: AvatarProps) => {
-    const { appearance = "circle", size = "medium", src, alt } = props;
+    const {
+        appearance = "circle",
+        size = "medium",
+        src,
+        alt,
+        borderColor,
+    } = props;
 
     const sizeInRem = imageSizeInRem(size);
     const app = avatarAppearance(appearance);
@@ -30,6 +37,7 @@ const Avatar = (props: AvatarProps) => {
                     height: sizeInRem + "rem",
                     width: sizeInRem + "rem",
                     borderRadius: app + "%",
+                    border: borderColor ? `solid 2px ${borderColor}` : "",
                 }}
                 alt={alt}
             />

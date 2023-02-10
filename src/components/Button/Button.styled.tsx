@@ -12,7 +12,7 @@ export const Btn = styled.button<ButtonStyleProps>`
     border: none;
     cursor: pointer;
     &:hover {
-        background-color: #a6a5a59f;
+        background-color: #7474749f;
     }
     background-color: ${(props) => props.appearanceValue};
     color: white;
