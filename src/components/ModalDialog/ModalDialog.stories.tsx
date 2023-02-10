@@ -30,13 +30,7 @@ Primary.args = {
             Nullam id lectus aliquam, pretium dui ullamcorper, maximus felis.
             Nulla nunc arcu, dictum eget semper non, luctus vel nulla. Praesent
             sed dolor in quam euismod ullamcorper vitae sit amet enim. Duis
-            molestie iaculis velit, at facilisis dolor pretium in. Etiam
-            ullamcorper turpis sed interdum suscipit. Donec nec elementum massa.
-            Curabitur id velit vitae magna rutrum vehicula. Mauris lobortis
-            egestas ligula dictum ultricies. Ut a dui vel purus eleifend varius.
-            Aenean a massa in erat egestas auctor. Sed diam dui, efficitur quis
-            dui nec, dapibus lobortis libero. Phasellus elementum metus ut augue
-            pulvinar, in dapibus velit iaculis. Nullam ac scelerisque erat.
+            molestie iaculis velit, at facilisis dolor pretium in.
         </ModalBody>,
         <ModalFooter>
             <Button minWidth={8} title="Cancel" onClick={() => null}></Button>
@@ -48,5 +42,5 @@ Primary.args = {
             ></Button>
         </ModalFooter>,
     ],
-    width: 30,
+    // width: 30,
 };

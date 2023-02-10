@@ -8,8 +8,6 @@ export interface ButtonProps {
     title: string;
     appearance?: Appearance;
     disabled?: boolean;
-    width?: number;
-    height?: number;
     minWidth?: number;
     padding?: number;
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -20,8 +18,6 @@ const Button = (props: ButtonProps) => {
         title,
         appearance,
         disabled = false,
-        width,
-        height,
         minWidth,
         padding,
         onClick,
@@ -33,8 +29,6 @@ const Button = (props: ButtonProps) => {
         <GlobalStyleWrapper>
             <Btn
                 disabled={disabled}
-                width={width}
-                height={height}
                 padding={padding}
                 minWidth={minWidth}
                 title={title}

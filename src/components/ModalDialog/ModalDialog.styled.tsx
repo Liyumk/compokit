@@ -5,7 +5,7 @@ import { ModalDialogProps } from "./ModalDialog";
 export const ModalWrapper = styled.div<ModalDialogProps>`
     flex-direction: column;
     justify-content: space-between;
-    width: ${(props) => (props.width ? props.width + "rem" : "40%")};
+    width: ${(props) => (props.width ? props.width + "rem" : "50%")};
     height: ${(props) =>
         props.height ? props.height.toString() + "px" : "fit-content"};
     background-color: white;
