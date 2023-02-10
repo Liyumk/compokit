@@ -1,4 +1,4 @@
 export { default as ModalDialog } from './ModalDialog';
-export { default as ModalHeader } from './ModalHeader/ModalHeader';
-export { default as ModalBody } from './ModalBody/ModalBody';
-export { default as ModalFooter } from './ModalFooter/ModalFooter';
+export { ModalHeader } from './ModalHeader';
+export { ModalBody } from './ModalBody';
+export { ModalFooter } from './ModalFooter';
