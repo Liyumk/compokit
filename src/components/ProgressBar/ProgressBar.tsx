@@ -12,7 +12,7 @@ const ProgressBar = ({ value, showNumber = false }: ProgressBarProps) => {
     return (
         <Wrapper>
             <Filler value={completed}></Filler>
-            <Indicator>{showNumber && value}</Indicator>
+            <Indicator>{showNumber && completed}</Indicator>
         </Wrapper>
     );
 };
