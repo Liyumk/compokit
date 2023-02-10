@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/liyumk"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A simple custom React component libraries",
   "scripts": {
     "rollup": "rollup -c",

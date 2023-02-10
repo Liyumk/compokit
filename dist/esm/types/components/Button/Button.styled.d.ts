@@ -1,5 +1,5 @@
 import { ButtonProps } from "./Button";
-export type AppearanceValue = "#4CAF50" | "#f44336" | "#008CBA" | "orange" | "gray" | "gainsboro";
+import { AppearanceValue } from "../../common/types";
 export interface ButtonStyleProps extends ButtonProps {
     appearanceValue: AppearanceValue;
 }
