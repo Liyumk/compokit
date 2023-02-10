@@ -16,7 +16,7 @@ export const Filler = styled.div<ProgressBarProps>`
     height: 100%;
     width: ${(props) => props.value}%;
     border-radius: 100px;
-    background-color: gray;
+    background-color: #4f81c7;
 `;
 
 export const Indicator = styled.div`
@@ -24,10 +24,10 @@ export const Indicator = styled.div`
     height: 20px;
     width: 20px;
     margin-left: -4px;
-    background-color: gray;
+    background-color: #22559c;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
 `;

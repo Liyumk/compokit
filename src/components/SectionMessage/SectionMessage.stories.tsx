@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SectionMessage, { SectionMessageProps } from "./SectionMessage";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import SectionFooter from "./SectionFooter/SectionFooter";
+import Button from "../Button";
 
 export default {
     title: "Section Message",
@@ -27,8 +28,20 @@ Primary.args = {
             consequatur amet!
         </p>,
         <SectionFooter>
-            <p>action one</p>
-            <p>action two</p>
+            <Button
+                title="Action one"
+                appearance="danger"
+                onClick={() => {
+                    alert("Action one clicked");
+                }}
+            ></Button>
+            <Button
+                title="Action two"
+                appearance="success"
+                onClick={() => {
+                    alert("Action two clicked");
+                }}
+            ></Button>
         </SectionFooter>,
     ],
 };
