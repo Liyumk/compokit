@@ -31,6 +31,7 @@
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "classnames": "^2.3.2",
     "eslint": "^8.33.0",
     "eslint-plugin-storybook": "^0.6.10",
     "jest-environment-jsdom": "^29.4.2",
