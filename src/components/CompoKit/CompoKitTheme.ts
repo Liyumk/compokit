@@ -24,13 +24,6 @@ export interface CompoKitColors extends CompoKitStateColors {
   yellow: string;
 }
 
-export interface CompKitAppearances {
-  default: string;
-  help: string;
-  inverted: string;
-  primary: string;
-}
-
 export interface CompoKitSizes {
   xs: string;
   sm: string;

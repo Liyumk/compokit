@@ -1,11 +1,6 @@
 import classNames from "classnames";
 import React, { FC } from "react";
-import {
-    CompKitAppearances,
-    CompoKitColors,
-    CompoKitSizes,
-    CompoKitSpacings,
-} from "../CompoKit/CompoKitTheme";
+import { CompoKitSizes, CompoKitSpacings } from "../CompoKit/CompoKitTheme";
 import { useTheme } from "../../hooks/useTheme";
 
 export interface CompoKitProgressIndicatorTheme {
@@ -19,20 +14,19 @@ export interface CompoKitProgressIndicatorRootTheme {
 
 export interface CompoKitProgressIndicatorIndicateTheme {
     base: string;
-    color: ProgressIndicatorColors;
+    appearance: ProgressIndicatorAppearances;
 }
 
-export interface ProgressIndicatorColors {
-    blueBlack: string;
-    lightGray: string;
+export interface Appearances {
+    selected: string;
+    others: string;
 }
 
-export interface ProgressIndicatorAppearances
-    extends Pick<
-        CompKitAppearances,
-        "default" | "help" | "inverted" | "primary"
-    > {
-    [key: string]: string;
+export interface ProgressIndicatorAppearances {
+    default: Appearances;
+    help: Appearances;
+    inverted: Appearances;
+    primary: Appearances;
 }
 
 export interface ProgressIndicatorSizes
@@ -48,7 +42,7 @@ export interface ProgressIndicatorSpacings
 export interface ProgressIndicatorProps {
     selectedIndex: number;
     values: any[];
-    appearance: ProgressIndicatorAppearances;
+    appearance: keyof ProgressIndicatorAppearances;
     ariaControls: string;
     onSelect: () => undefined;
     size: ProgressIndicatorSizes;
@@ -59,6 +53,7 @@ export interface ProgressIndicatorProps {
 export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
     selectedIndex = 1,
     values,
+    appearance = "default",
 }) => {
     const theme = useTheme().theme.progressIndicator;
 
@@ -70,8 +65,8 @@ export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
                         className={classNames(
                             theme.indicate.base,
                             selectedIndex === index + 1
-                                ? theme.indicate.color.blueBlack
-                                : theme.indicate.color.lightGray
+                                ? theme.indicate.appearance[appearance].selected
+                                : theme.indicate.appearance[appearance].others
                         )}
                     />
                 ))}
