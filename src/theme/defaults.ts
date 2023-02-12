@@ -7,9 +7,23 @@ const theme : CompoKitTheme = {
     },
     indicate: {
       base: 'w-2 h-2 rounded-xl',
-      color: {
-        blueBlack: "bg-blue-900",
-        lightGray: "bg-gray-200"
+      appearance: {
+        default:{
+          selected: "bg-blue-900",
+          others:'bg-blue-200' 
+        },
+        primary:{
+          selected: "bg-blue-700",
+          others: "bg-blue-200" 
+        },
+        help:{
+          selected: "bg-purple-900",
+          others: "bg-purple-200"
+        },
+        inverted:{
+          selected: "bg-white",
+          others: "bg-gray-200"
+        },
       }
     }
   }
