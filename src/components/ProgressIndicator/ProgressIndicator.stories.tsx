@@ -18,4 +18,7 @@ DefaultProgressIndicator.storyName = "Default";
 DefaultProgressIndicator.args = {
     values: ["one", "two", "three", "four"],
     selectedIndex: 1,
+    onSelect: () => {
+        console.log("Change the selected index state here");
+    },
 };

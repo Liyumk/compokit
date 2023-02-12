@@ -3,15 +3,16 @@ import { CompoKitTheme } from "../components/CompoKit/CompoKitTheme";
 const theme : CompoKitTheme = {
   progressIndicator: {
     root:{
-      base: 'flex w-fit justify-center items-center gap-x-1.5',
-       spacing: {
-       comfortable: 'gap-x-2' ,
-       cozy: 'gap-x-1.5',
-       compact: 'gap-x-1'
+      base: 'flex w-fit justify-center items-center',
+      spacing: {
+      comfortable: 'gap-x-2',
+      cozy: 'gap-x-1.5',
+      compact: 'gap-x-1'
       }
     },
     indicate: {
-      base: 'w-2 h-2 rounded-xl',
+      base: 'rounded-xl',
+      pointer: 'cursor-pointer',
       appearance: {
         default:{
           selected: "bg-blue-900",

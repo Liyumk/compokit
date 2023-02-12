@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { CompoKitSizes, CompoKitSpacings } from "../CompoKit/CompoKitTheme";
 import { useTheme } from "../../hooks/useTheme";
 
@@ -17,6 +17,7 @@ export interface CompoKitProgressIndicatorIndicateTheme {
     base: string;
     appearance: ProgressIndicatorAppearances;
     size: ProgressIndicatorSizes;
+    pointer: string;
 }
 
 export interface Appearances {
@@ -37,7 +38,7 @@ export interface ProgressIndicatorSizes
 }
 
 export interface ProgressIndicatorSpacings
-    extends Pick<CompoKitSpacings, "comfortable" | "compact" | "cozy"> {
+    extends Pick<CompoKitSpacings, "comfortable" | "cozy" | "compact"> {
     // [key: string]: string;
 }
 
@@ -47,7 +48,7 @@ export interface ProgressIndicatorProps {
     appearance: keyof ProgressIndicatorAppearances;
     ariaControls: string;
     ariaLabel: string;
-    onSelect?: (index: number) => void;
+    onSelect?: () => void;
     size: keyof ProgressIndicatorSizes;
     spacing: keyof ProgressIndicatorSpacings;
     testId: string;
@@ -60,17 +61,11 @@ export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
     ariaControls,
     ariaLabel,
     onSelect,
-    size,
-    spacing,
+    size = "default",
+    spacing = "cozy",
     testId,
 }) => {
     const theme = useTheme().theme.progressIndicator;
-
-    const [prevSelectedIndex, setPrevSelectedIndex] = useState(selectedIndex);
-
-    if (selectedIndex !== prevSelectedIndex) {
-        onSelect && onSelect(prevSelectedIndex);
-    }
 
     return (
         <div
@@ -83,12 +78,16 @@ export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
                         aria-controls={ariaControls + index}
                         aria-aria-label={ariaLabel + index}
                         defaultValue={value}
+                        onClick={() => {
+                            onSelect && onSelect();
+                        }}
                         className={classNames(
                             theme.indicate.base,
                             selectedIndex === index + 1
                                 ? theme.indicate.appearance[appearance].selected
                                 : theme.indicate.appearance[appearance].others,
-                            theme.indicate.size[size]
+                            theme.indicate.size[size],
+                            onSelect && theme.indicate.pointer
                         )}
                     />
                 ))}
