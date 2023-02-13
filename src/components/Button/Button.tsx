@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import {
     CompoKitColors,
     CompoKitSpacings,
@@ -12,9 +12,11 @@ export interface CompKitButtonTheme {
     appearance: ButtonColors;
     selected: ButtonSelectedColors;
     disabled: string;
-    icon: string;
+    icon: ButtonIcons;
     spacing: ButtonSpacings;
     fitContainer: string;
+    overlay: string;
+    loading: string;
 }
 
 export interface ButtonColors
@@ -38,6 +40,11 @@ export interface ButtonSpacings
 
 export interface ButtonSelectedColors extends ButtonColors {
     [key: string]: string;
+}
+
+export interface ButtonIcons {
+    before: string;
+    after: string;
 }
 
 export type ButtonType = "button" | "submit" | "reset" | undefined;
@@ -88,23 +95,29 @@ export const Button: FC<ButtonProps> = ({
     shouldFitContainer,
     children,
     testId,
+    isLoading,
     component,
     interactionName,
     analyticsContext,
-    isLoading,
 }) => {
     const theme = useTheme().theme.button;
     const [isSelectedEvent, setIsSelectedEvent] = useState(false);
+    const refButton = useRef();
 
     return (
         <button
+            ref={refButton.current}
+            data-testId={testId}
             disabled={isDisabled}
+            type={type}
+            autoFocus={autoFocus}
             className={classNames(
                 theme.base,
                 !isSelectedEvent && !isSelected && theme.appearance[appearance],
                 (isSelectedEvent || isSelected) && theme.selected[appearance],
+                shouldFitContainer && theme.fitContainer,
                 theme.spacing[spacing],
-                isDisabled && theme.disabled,
+                (isDisabled || isLoading) && theme.disabled,
                 className
             )}
             onMouseDown={() => {
@@ -117,7 +130,23 @@ export const Button: FC<ButtonProps> = ({
             onClick={onClick}
             onFocus={onFocus}
         >
-            {children}
+            {iconBefore && (
+                <div className={theme.icon.before}>{iconBefore}</div>
+            )}
+            {appearance === "subtleLink" || appearance === "link" ? (
+                <a href={href} target={target}>
+                    {children}
+                </a>
+            ) : (
+                children
+            )}
+            {isLoading && (
+                <div className={theme.overlay}>
+                    <div className={theme.loading} />
+                </div>
+            )}
+            {iconAfter && <div className={theme.icon.after}>{iconAfter}</div>}
+            {overlay && <div className={theme.overlay}>{overlay}</div>}
         </button>
     );
 };
