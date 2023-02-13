@@ -100,15 +100,15 @@ export const Button: FC<ButtonProps> = ({
             disabled={isDisabled}
             className={classNames(
                 theme.base,
-                !isSelectedEvent && theme.appearance[appearance],
-                isSelectedEvent && theme.selected[appearance],
+                !isSelectedEvent && !isSelected && theme.appearance[appearance],
+                (isSelectedEvent || isSelected) && theme.selected[appearance],
                 className
             )}
             onMouseDown={() => {
-                isSelected && setIsSelectedEvent(true);
+                setIsSelectedEvent(true);
             }}
             onMouseUp={() => {
-                isSelected && setIsSelectedEvent(false);
+                setIsSelectedEvent(false);
             }}
             onBlur={onBlur}
             onClick={onClick}
