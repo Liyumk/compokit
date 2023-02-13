@@ -34,12 +34,12 @@ export interface ProgressIndicatorAppearances {
 
 export interface ProgressIndicatorSizes
     extends Pick<CompoKitSizes, "small" | "default" | "large"> {
-    // [key: string]: string;
+    [key: string]: string;
 }
 
 export interface ProgressIndicatorSpacings
     extends Pick<CompoKitSpacings, "comfortable" | "cozy" | "compact"> {
-    // [key: string]: string;
+    [key: string]: string;
 }
 
 export interface ProgressIndicatorProps {
