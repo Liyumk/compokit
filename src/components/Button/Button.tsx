@@ -11,6 +11,7 @@ export interface CompKitButtonTheme {
     base: string;
     appearance: ButtonColors;
     selected: ButtonSelectedColors;
+    disabled: string;
     icon: string;
     spacing: ButtonSpacings;
     fitContainer: string;
@@ -54,7 +55,7 @@ export interface ButtonProps {
     onBlur: React.FocusEventHandler<HTMLButtonElement> | undefined;
     onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
     onFocus: React.FocusEventHandler<HTMLButtonElement> | undefined;
-    spacing: string;
+    spacing: keyof ButtonSpacings;
     target: React.HTMLAttributeAnchorTarget | undefined;
     type: ButtonType;
     shouldFitContainer: boolean;
@@ -81,7 +82,7 @@ export const Button: FC<ButtonProps> = ({
     onBlur,
     onClick,
     onFocus,
-    spacing,
+    spacing = "default",
     target,
     type,
     shouldFitContainer,
@@ -102,6 +103,8 @@ export const Button: FC<ButtonProps> = ({
                 theme.base,
                 !isSelectedEvent && !isSelected && theme.appearance[appearance],
                 (isSelectedEvent || isSelected) && theme.selected[appearance],
+                theme.spacing[spacing],
+                isDisabled && theme.disabled,
                 className
             )}
             onMouseDown={() => {
