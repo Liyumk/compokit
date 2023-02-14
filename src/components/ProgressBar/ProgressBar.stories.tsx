@@ -2,10 +2,10 @@ import React from "react";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import ProgressBar, { ProgressBarProps } from "./ProgressBar";
+import { ProgressBar } from "./ProgressBar";
 
 export default {
-    title: "ProgressBar",
+    title: "Components/ProgressBar",
     component: ProgressBar,
 } as ComponentMeta<typeof ProgressBar>;
 
@@ -13,8 +13,6 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
     <ProgressBar {...args} />
 );
 
-export const Primary = Template.bind({});
-
-Primary.args = {
-    value: 20,
-};
+export const DefaultProgressIndicator = Template.bind({});
+DefaultProgressIndicator.storyName = "Default";
+DefaultProgressIndicator.args = {};
