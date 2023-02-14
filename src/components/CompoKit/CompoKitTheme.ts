@@ -1,4 +1,5 @@
 import { CompKitButtonTheme } from "../Button/Button";
+import { CompKitProgressBarTheme } from "../ProgressBar/ProgressBar";
 import { CompoKitProgressIndicatorTheme } from "../ProgressIndicator/ProgressIndicator";
 
 export interface CompoKitStateColors {
@@ -9,20 +10,6 @@ export interface CompoKitStateColors {
   subtle: string;
   subtleLink: string;
   warning: string;
-  defaultDark: string;
-  dangerDark: string;
-  linkDark: string;
-  primaryDark: string;
-  subtleDark: string;
-  subtleLinkDark: string;
-  warningDark: string;
-  defaultDarker: string;
-  dangerDarker: string;
-  linkDarker: string;
-  primaryDarker: string;
-  subtleDarker: string;
-  subtleLinkDarker: string;
-  warningDarker: string;
 }
 
 export interface CompoKitColors extends CompoKitStateColors {
@@ -66,6 +53,7 @@ export interface CompoKitSpacings {
 }
 
 export interface CompoKitTheme {
-  progressIndicator: CompoKitProgressIndicatorTheme
-  button: CompKitButtonTheme
+  progressIndicator: CompoKitProgressIndicatorTheme;
+  button: CompKitButtonTheme;
+  progressBar: CompKitProgressBarTheme;
 }

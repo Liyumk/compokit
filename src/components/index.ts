@@ -1,4 +1,4 @@
-export {default as ProgressBar} from './ProgressBar'
+export * from './ProgressBar'
 export * from './ProgressIndicator'
 export * from './Button'
 export {default as Avatar} from './Avatar'

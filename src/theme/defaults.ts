@@ -31,6 +31,27 @@ const theme : CompoKitTheme = {
     spacing: {compact: "h-7", default: "h-9", none: "h-auto px-0"},
     loading: "w-5 h-5 rounded-full animate-spin border-2 border-solid border-blue-500 border-t-transparent"
   },
+  progressBar:{
+    root: {
+    outer: "w-full h-1.5 rounded-lg",
+    filler: "h-1.5 rounded-lg",
+    appearance: {
+      default: {
+        inner: "bg-blue-900",
+        outer: "bg-gray-100",
+      },
+      inverse: {
+        inner: "bg-white",
+        outer: "bg-blue-800"
+      },
+      success: {
+        inner: "bg-green-500",
+        outer: "bg-green-500"
+      } 
+    }
+    }
+
+  },
   progressIndicator: {
     root:{
       base: 'flex w-fit justify-center items-center',
