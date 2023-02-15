@@ -11,44 +11,44 @@ const theme : CompoKitTheme = {
     },
     disabled: "opacity-50",
     presence: {
-      base: "rounded-full ",
+      base: "rounded-full absolute",
       online: {
         base: "bg-green-500 border-2 border-white",
         xsmall: "",
-        small: "w-3 h-3 absolute bottom-0 -right-1",
-        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
-        large: "w-4 h-4 absolute bottom-0 -right-1",
-        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        small: "w-3 h-3 bottom-0 -right-1",
+        medium: "w-3.5 h-3. bottom-0 -right-1",
+        large: "w-4 h-4 bottom-0 -right-1",
+        xlarge: "w-5 h-5 bottom-2 right-0",
         xxlarge: ""
       },
       busy: {
         base: "flex justify-center items-center bg-red-500",
         innerBase: "w-1 h-2 bg-white -rotate-45",
         xsmall: "",
-        small: "w-3 h-3 absolute bottom-0 -right-1",
-        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
-        large: "w-4 h-4 absolute bottom-0 -right-1",
-        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        small: "w-3 h-3  bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 bottom-0 -right-1",
+        large: "w-4 h-4 bottom-0 -right-1",
+        xlarge: "w-5 h-5 bottom-2 right-0",
         xxlarge: ""
       },
       focus: {
         base: "flex justify-center items-center bg-white border-4 border-gray-500",
         innerBase: " w-1.5 h-1.5 bg-gray-500 rounded-full",
         xsmall: "",
-        small: "w-3 h-3 absolute bottom-0 -right-1",
-        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
-        large: "w-4 h-4 absolute bottom-0 -right-1",
-        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        small: "w-3 h-3bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 bottom-0 -right-1",
+        large: "w-4 h-4 bottom-0 -right-1",
+        xlarge: "w-5 h-5 bottom-2 right-0",
         xxlarge: ""
       },
       offline: {
         base: "flex justify-center items-center bg-gray-500 border-2 border-white",
         innerBase: " w-1.5 h-1.5 bg-gray-200 rounded-full",
         xsmall: "",
-        small: "w-3 h-3 absolute bottom-0 -right-1",
-        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
-        large: "w-4 h-4 absolute bottom-0 -right-1",
-        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        small: "w-3 h-3 bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 bottom-0 -right-1",
+        large: "w-4 h-4 bottom-0 -right-1",
+        xlarge: "w-5 h-5 bottom-2 right-0",
         xxlarge: ""
       }
     },
@@ -61,9 +61,10 @@ const theme : CompoKitTheme = {
       xxlarge: "w-32 h-32",
     },
     status:{
-      approved: "w-1 h-1 ",
-      declined: "w-1 h-1",
-      locked: "w-1 h-1",  
+      base: "w-4 h-4 absolute top-0 -right-2 flex justify-center items-center rounded-full border border-white",
+      approved: "bg-green-500",
+      declined: "bg-red-500",
+      locked: "bg-gray-500",  
     }
   },
    button: {
