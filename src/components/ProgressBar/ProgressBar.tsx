@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren } from "react";
-import { CompoKitColors } from "../CompoKit/CompoKitTheme";
 import classNames from "classnames";
 import { useTheme } from "../../hooks/useTheme";
+import "./ProgressBar.css";
 
 export interface CompKitProgressBarTheme {
     root: CompKitProgressBarRootTheme;
@@ -27,10 +27,11 @@ export interface ProgressBarAppearance {
 export type value = 0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1;
 
 export interface ProgressBarProps extends PropsWithChildren {
-    appearance: keyof ProgressBarAppearance;
+    appearance?: keyof ProgressBarAppearance;
     value: value;
-    ariaLabel: string;
-    testId: string;
+    ariaLabel?: string;
+    testId?: string;
+    indeterminate?: boolean;
 }
 
 export const ProgressBar: FC<ProgressBarProps> = ({
@@ -38,8 +39,12 @@ export const ProgressBar: FC<ProgressBarProps> = ({
     value,
     ariaLabel,
     testId,
+    indeterminate,
 }) => {
     const theme = useTheme().theme.progressBar;
+    const successAndNotIndeterminate =
+        appearance === "success" && !indeterminate;
+    const valueAndNotIndeterminate = value && !indeterminate;
     return (
         <>
             <div
@@ -53,11 +58,18 @@ export const ProgressBar: FC<ProgressBarProps> = ({
                 <div
                     className={classNames(
                         theme.root.filler,
-                        theme.root.appearance[appearance].inner
+                        theme.root.appearance[appearance].inner,
+                        indeterminate && "indeterminate"
                     )}
                     style={{
                         width: `${
-                            appearance == "success" ? 100 : value * 100
+                            successAndNotIndeterminate
+                                ? 100
+                                : valueAndNotIndeterminate
+                                ? value * 100
+                                : indeterminate
+                                ? 50
+                                : 0
                         }%`,
                     }}
                 ></div>
