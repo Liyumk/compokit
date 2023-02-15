@@ -1,6 +1,35 @@
 import { CompoKitTheme } from "../components/CompoKit/CompoKitTheme";
 
 const theme : CompoKitTheme = {
+  avatar:{
+
+    base: "flex justify-center items-center bg-gray-400",
+    default:"w-8 h-8",
+    appearance:{
+      circle: "rounded-full",
+      square: "rounded-md"
+    },
+    disabled: "opacity-50",
+    presence: {
+      online: "w-1 h-1 rounded-full bg-green-500",
+      busy: "w-1 h-1 rounded-full bg-orange-500",
+      focus: "w-1 h-1 rounded-full bg-gray-500",
+      offline: "w-1 h-1 rounded-full bg-gray-500"
+    },
+    sizes:{
+      xsmall: "w-4 h-4",
+      small: "w-6 h-6",
+      medium: "w-8 h-8",
+      large: "w-10 h-10",
+      xlarge: "w-24 h-24",
+      xxlarge: "w-32 h-32",
+    },
+    status:{
+      approved: "w-1 h-1 ",
+      declined: "w-1 h-1",
+      locked: "w-1 h-1",  
+    }
+  },
    button: {
     base: "relative h-9 px-2.5 rounded font-medium flex items-center justify-between focus:outline-none",
       appearance: {

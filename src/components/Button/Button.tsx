@@ -1,13 +1,9 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
-import {
-    CompoKitColors,
-    CompoKitSpacings,
-    CompoKitStateColors,
-} from "../CompoKit/CompoKitTheme";
+import { CompoKitColors, CompoKitSpacings } from "../CompoKit/CompoKitTheme";
 import classNames from "classnames";
 import { useTheme } from "../../hooks/useTheme";
 
-export interface CompKitButtonTheme {
+export interface CompoKitButtonTheme {
     base: string;
     appearance: ButtonColors;
     selected: ButtonSelectedColors;
