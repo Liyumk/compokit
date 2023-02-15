@@ -15,4 +15,6 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
 
 export const DefaultProgressIndicator = Template.bind({});
 DefaultProgressIndicator.storyName = "Default";
-DefaultProgressIndicator.args = {};
+DefaultProgressIndicator.args = {
+    value: 0.4,
+};

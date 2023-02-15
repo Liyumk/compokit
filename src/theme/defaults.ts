@@ -33,7 +33,7 @@ const theme : CompoKitTheme = {
   },
   progressBar:{
     root: {
-    outer: "w-full h-1.5 rounded-lg",
+    outer: "w-full h-1.5 rounded-lg relative overflow-hidden",
     filler: "h-1.5 rounded-lg",
     appearance: {
       default: {
@@ -42,7 +42,7 @@ const theme : CompoKitTheme = {
       },
       inverse: {
         inner: "bg-white",
-        outer: "bg-blue-800"
+        outer: "bg-blue-900"
       },
       success: {
         inner: "bg-green-500",
@@ -50,7 +50,6 @@ const theme : CompoKitTheme = {
       } 
     }
     }
-
   },
   progressIndicator: {
     root:{
