@@ -3,11 +3,11 @@ import classNames from "classnames";
 import { useTheme } from "../../hooks/useTheme";
 import "./ProgressBar.css";
 
-export interface CompKitProgressBarTheme {
-    root: CompKitProgressBarRootTheme;
+export interface CompoKitProgressBarTheme {
+    root: CompoKitProgressBarRootTheme;
 }
 
-export interface CompKitProgressBarRootTheme {
+export interface CompoKitProgressBarRootTheme {
     outer: string;
     filler: string;
     appearance: ProgressBarAppearance;

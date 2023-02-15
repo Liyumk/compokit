@@ -1,5 +1,6 @@
-import { CompKitButtonTheme } from "../Button/Button";
-import { CompKitProgressBarTheme } from "../ProgressBar/ProgressBar";
+import { CompoKitAvatarTheme } from "../Avatar/Avatar";
+import { CompoKitButtonTheme } from "../Button/Button";
+import {  CompoKitProgressBarTheme } from "../ProgressBar/ProgressBar";
 import { CompoKitProgressIndicatorTheme } from "../ProgressIndicator/ProgressIndicator";
 
 export interface CompoKitStateColors {
@@ -31,17 +32,29 @@ export interface CompoKitColors extends CompoKitStateColors {
 
 export interface CompoKitSizes {
   xs: string;
+  xsmall: string;
   sm: string;
   md: string;
   lg: string;
   xl: string;
-  small: string;
   default: string;
+  small: string;
+  medium:string;
   large: string;
+  xlarge:string;
+  xxlarge:string;
+  
 }
 
-export interface CompKitAppearances {
+export interface CompoKitStatus {
+  approved:string,
+  declined: string,
+  locked: string,
+}
 
+export interface CompoKitAppearances {
+  circle: string;
+  square: string;
 }
 
 export interface CompoKitSpacings {
@@ -54,6 +67,7 @@ export interface CompoKitSpacings {
 
 export interface CompoKitTheme {
   progressIndicator: CompoKitProgressIndicatorTheme;
-  button: CompKitButtonTheme;
-  progressBar: CompKitProgressBarTheme;
+  button: CompoKitButtonTheme;
+  progressBar: CompoKitProgressBarTheme;
+  avatar: CompoKitAvatarTheme;
 }
