@@ -6,6 +6,8 @@ import {
 } from "../CompoKit/CompoKitTheme";
 import { useTheme } from "../../hooks/useTheme";
 import classNames from "classnames";
+import { TiLockClosed, TiTick } from "react-icons/ti";
+import { AiOutlineClose } from "react-icons/ai";
 
 export interface CompoKitAvatarTheme {
     base: string;
@@ -52,6 +54,7 @@ export interface AvatarStatus
     extends Pick<CompoKitStatus, "approved" | "declined" | "locked"> {
     [key: string]: string;
 }
+
 export interface AvatarProps extends PropsWithChildren {
     appearance: keyof AvatarAppearances;
     label: string;
@@ -63,7 +66,7 @@ export interface AvatarProps extends PropsWithChildren {
     src: string;
     alt: string;
     size: keyof AvatarSizes;
-    status: keyof AvatarStatus | ReactNode;
+    status: keyof AvatarStatus;
     stackIndex: number;
     tabIndex: number;
     target: React.HTMLAttributeAnchorTarget | undefined;
@@ -161,26 +164,48 @@ export const Avatar: FC<AvatarProps> = ({
                     )}
                 </div>
             )}
-            {size !== "xxlarge" && size !== "xsmall" && (
-                <div
-                    className={classNames(
-                        presence && theme.presence[presence][size],
-                        presence && theme.presence[presence].base,
-                        theme.presence.base
-                    )}
-                >
+            {size !== "xxlarge" &&
+                size !== "xsmall" &&
+                size !== "small" &&
+                (status ? (
                     <div
                         className={classNames(
-                            presence === "focus" &&
-                                theme.presence.focus.innerBase,
-                            presence === "busy" &&
-                                theme.presence.busy.innerBase,
-                            presence === "offline" &&
-                                theme.presence.offline.innerBase
+                            theme.status.base,
+                            size === "xlarge" && "top-3 right-1",
+                            size === "large" && "top-1 right-0",
+                            theme.status[status]
                         )}
-                    ></div>
-                </div>
-            )}
+                    >
+                        <div>
+                            {status === "locked" && <TiLockClosed size={12} />}
+                            {status === "approved" && (
+                                <TiTick size={12} color="white" />
+                            )}
+                            {status === "declined" && (
+                                <AiOutlineClose size={12} color="white" />
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <div
+                        className={classNames(
+                            presence && theme.presence[presence][size],
+                            presence && theme.presence[presence].base,
+                            theme.presence.base
+                        )}
+                    >
+                        <div
+                            className={classNames(
+                                presence === "focus" &&
+                                    theme.presence.focus.innerBase,
+                                presence === "busy" &&
+                                    theme.presence.busy.innerBase,
+                                presence === "offline" &&
+                                    theme.presence.offline.innerBase
+                            )}
+                        ></div>
+                    </div>
+                ))}
         </div>
     );
 };
