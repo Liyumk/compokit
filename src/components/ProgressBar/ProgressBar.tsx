@@ -31,7 +31,7 @@ export interface ProgressBarProps extends PropsWithChildren {
     value: value;
     ariaLabel?: string;
     testId?: string;
-    indeterminate?: boolean;
+    isIndeterminate?: boolean;
 }
 
 export const ProgressBar: FC<ProgressBarProps> = ({
@@ -39,12 +39,12 @@ export const ProgressBar: FC<ProgressBarProps> = ({
     value,
     ariaLabel,
     testId,
-    indeterminate,
+    isIndeterminate,
 }) => {
     const theme = useTheme().theme.progressBar;
     const successAndNotIndeterminate =
-        appearance === "success" && !indeterminate;
-    const valueAndNotIndeterminate = value && !indeterminate;
+        appearance === "success" && !isIndeterminate;
+    const valueAndNotIndeterminate = value && !isIndeterminate;
     return (
         <>
             <div
@@ -59,7 +59,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({
                     className={classNames(
                         theme.root.filler,
                         theme.root.appearance[appearance].inner,
-                        indeterminate && "indeterminate"
+                        isIndeterminate && "indeterminate"
                     )}
                     style={{
                         width: `${
@@ -67,7 +67,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({
                                 ? 100
                                 : valueAndNotIndeterminate
                                 ? value * 100
-                                : indeterminate
+                                : isIndeterminate
                                 ? 50
                                 : 0
                         }%`,
