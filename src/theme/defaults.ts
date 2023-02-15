@@ -2,8 +2,8 @@ import { CompoKitTheme } from "../components/CompoKit/CompoKitTheme";
 
 const theme : CompoKitTheme = {
   avatar:{
-
     base: "flex justify-center items-center bg-gray-400",
+    wrapper: "w-fit",
     default:"w-8 h-8",
     appearance:{
       circle: "rounded-full",
@@ -11,10 +11,46 @@ const theme : CompoKitTheme = {
     },
     disabled: "opacity-50",
     presence: {
-      online: "w-1 h-1 rounded-full bg-green-500",
-      busy: "w-1 h-1 rounded-full bg-orange-500",
-      focus: "w-1 h-1 rounded-full bg-gray-500",
-      offline: "w-1 h-1 rounded-full bg-gray-500"
+      base: "rounded-full ",
+      online: {
+        base: "bg-green-500 border-2 border-white",
+        xsmall: "",
+        small: "w-3 h-3 absolute bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
+        large: "w-4 h-4 absolute bottom-0 -right-1",
+        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        xxlarge: ""
+      },
+      busy: {
+        base: "flex justify-center items-center bg-red-500",
+        innerBase: "w-1 h-2 bg-white -rotate-45",
+        xsmall: "",
+        small: "w-3 h-3 absolute bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
+        large: "w-4 h-4 absolute bottom-0 -right-1",
+        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        xxlarge: ""
+      },
+      focus: {
+        base: "flex justify-center items-center bg-white border-4 border-gray-500",
+        innerBase: " w-1.5 h-1.5 bg-gray-500 rounded-full",
+        xsmall: "",
+        small: "w-3 h-3 absolute bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
+        large: "w-4 h-4 absolute bottom-0 -right-1",
+        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        xxlarge: ""
+      },
+      offline: {
+        base: "flex justify-center items-center bg-gray-500 border-2 border-white",
+        innerBase: " w-1.5 h-1.5 bg-gray-200 rounded-full",
+        xsmall: "",
+        small: "w-3 h-3 absolute bottom-0 -right-1",
+        medium: "w-3.5 h-3.5 absolute bottom-0 -right-1",
+        large: "w-4 h-4 absolute bottom-0 -right-1",
+        xlarge: "w-5 h-5 absolute bottom-2 right-0",
+        xxlarge: ""
+      }
     },
     sizes:{
       xsmall: "w-4 h-4",

@@ -6,10 +6,10 @@ import {
 } from "../CompoKit/CompoKitTheme";
 import { useTheme } from "../../hooks/useTheme";
 import classNames from "classnames";
-import "./Avatar.css";
 
 export interface CompoKitAvatarTheme {
     base: string;
+    wrapper: string;
     appearance: AvatarAppearances;
     default: string;
     presence: AvatarPresence;
@@ -24,19 +24,29 @@ export interface AvatarAppearances
 }
 
 export interface AvatarPresence {
-    online: string;
-    busy: string;
-    focus: string;
-    offline: string;
+    base: string;
+    online: AvatarPresenceSize;
+    busy: AvatarPresenceSize;
+    focus: AvatarPresenceSize;
+    offline: AvatarPresenceSize;
 }
+
+export interface AvatarPresenceSize
+    extends Pick<
+        CompoKitSizes,
+        "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge"
+    > {
+    base: string;
+    innerBase?: string;
+}
+
+export interface AvatarPresenceProps extends Omit<AvatarPresence, "base"> {}
 
 export interface AvatarSizes
     extends Pick<
         CompoKitSizes,
         "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge"
-    > {
-    [key: string]: string;
-}
+    > {}
 
 export interface AvatarStatus
     extends Pick<CompoKitStatus, "approved" | "declined" | "locked"> {
@@ -49,7 +59,7 @@ export interface AvatarProps extends PropsWithChildren {
     href: string;
     isDisabled: boolean;
     name: string;
-    presence: keyof AvatarPresence;
+    presence: keyof AvatarPresenceProps;
     src: string;
     alt: string;
     size: keyof AvatarSizes;
@@ -72,7 +82,7 @@ export const Avatar: FC<AvatarProps> = ({
     name,
     presence,
     src,
-    size = "large",
+    size = "xxlarge",
     status,
     tabIndex,
     target = "_blank",
@@ -106,9 +116,12 @@ export const Avatar: FC<AvatarProps> = ({
             }}
         />
     );
-
     return (
-        <div data-testid={testId} tabIndex={tabIndex}>
+        <div
+            data-testid={testId}
+            tabIndex={tabIndex}
+            className="relative w-fit"
+        >
             {children ? (
                 children
             ) : (
@@ -146,6 +159,26 @@ export const Avatar: FC<AvatarProps> = ({
                     ) : (
                         defaultPro
                     )}
+                </div>
+            )}
+            {size !== "xxlarge" && size !== "xsmall" && (
+                <div
+                    className={classNames(
+                        presence && theme.presence[presence][size],
+                        presence && theme.presence[presence].base,
+                        theme.presence.base
+                    )}
+                >
+                    <div
+                        className={classNames(
+                            presence === "focus" &&
+                                theme.presence.focus.innerBase,
+                            presence === "busy" &&
+                                theme.presence.busy.innerBase,
+                            presence === "offline" &&
+                                theme.presence.offline.innerBase
+                        )}
+                    ></div>
                 </div>
             )}
         </div>
