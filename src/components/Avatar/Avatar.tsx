@@ -6,10 +6,12 @@ import {
 } from "../CompoKit/CompoKitTheme";
 import { useTheme } from "../../hooks/useTheme";
 import classNames from "classnames";
-import "./Avatar.css";
+import { TiLockClosed, TiTick } from "react-icons/ti";
+import { AiOutlineClose } from "react-icons/ai";
 
 export interface CompoKitAvatarTheme {
     base: string;
+    wrapper: string;
     appearance: AvatarAppearances;
     default: string;
     presence: AvatarPresence;
@@ -24,24 +26,32 @@ export interface AvatarAppearances
 }
 
 export interface AvatarPresence {
-    online: string;
-    busy: string;
-    focus: string;
-    offline: string;
+    base: string;
+    online: AvatarPresenceSize;
+    busy: AvatarPresenceSize;
+    focus: AvatarPresenceSize;
+    offline: AvatarPresenceSize;
 }
 
-export interface AvatarSizes
+export interface AvatarPresenceSize
     extends Pick<
         CompoKitSizes,
         "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge"
     > {
-    [key: string]: string;
+    base: string;
+    innerBase?: string;
 }
+
+export interface AvatarPresenceProps extends Omit<AvatarPresence, "base"> {}
+
+export interface AvatarSizes
+    extends Omit<AvatarPresenceSize, "base" | "innerBase"> {}
 
 export interface AvatarStatus
     extends Pick<CompoKitStatus, "approved" | "declined" | "locked"> {
     [key: string]: string;
 }
+
 export interface AvatarProps extends PropsWithChildren {
     appearance: keyof AvatarAppearances;
     label: string;
@@ -49,11 +59,11 @@ export interface AvatarProps extends PropsWithChildren {
     href: string;
     isDisabled: boolean;
     name: string;
-    presence: keyof AvatarPresence;
+    presence: keyof AvatarPresenceProps;
     src: string;
     alt: string;
     size: keyof AvatarSizes;
-    status: keyof AvatarStatus | ReactNode;
+    status: keyof AvatarStatus;
     stackIndex: number;
     tabIndex: number;
     target: React.HTMLAttributeAnchorTarget | undefined;
@@ -72,7 +82,7 @@ export const Avatar: FC<AvatarProps> = ({
     name,
     presence,
     src,
-    size = "large",
+    size = "xlarge",
     status,
     tabIndex,
     target = "_blank",
@@ -106,9 +116,12 @@ export const Avatar: FC<AvatarProps> = ({
             }}
         />
     );
-
     return (
-        <div data-testid={testId} tabIndex={tabIndex}>
+        <div
+            data-testid={testId}
+            tabIndex={tabIndex}
+            className="relative w-fit"
+        >
             {children ? (
                 children
             ) : (
@@ -148,6 +161,48 @@ export const Avatar: FC<AvatarProps> = ({
                     )}
                 </div>
             )}
+            {size !== "xxlarge" &&
+                size !== "xsmall" &&
+                size !== "small" &&
+                (status ? (
+                    <div
+                        className={classNames(
+                            theme.status.base,
+                            size === "xlarge" && theme.status.xlarge,
+                            size === "large" && theme.status.large,
+                            theme.status[status]
+                        )}
+                    >
+                        <div>
+                            {status === "locked" && <TiLockClosed size={12} />}
+                            {status === "approved" && (
+                                <TiTick size={12} color="white" />
+                            )}
+                            {status === "declined" && (
+                                <AiOutlineClose size={12} color="white" />
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <div
+                        className={classNames(
+                            presence && theme.presence[presence][size],
+                            presence && theme.presence[presence].base,
+                            theme.presence.base
+                        )}
+                    >
+                        <div
+                            className={classNames(
+                                presence === "focus" &&
+                                    theme.presence.focus.innerBase,
+                                presence === "busy" &&
+                                    theme.presence.busy.innerBase,
+                                presence === "offline" &&
+                                    theme.presence.offline.innerBase
+                            )}
+                        ></div>
+                    </div>
+                ))}
         </div>
     );
 };
