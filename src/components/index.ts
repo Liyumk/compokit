@@ -1,7 +1,7 @@
 export * from './ProgressBar'
 export * from './ProgressIndicator'
 export * from './Button'
-export {default as Avatar} from './Avatar'
+export * from './Avatar'
 export {default as Code} from './Code'
 export {ModalDialog, ModalHeader, ModalBody, ModalFooter} from './ModalDialog'
 export {SectionMessage, SectionFooter, SectionTitle} from './SectionMessage'
