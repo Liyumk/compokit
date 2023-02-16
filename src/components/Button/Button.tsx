@@ -46,30 +46,30 @@ export interface ButtonIcons {
 export type ButtonType = "button" | "submit" | "reset" | undefined;
 
 export interface ButtonProps {
-    appearance: keyof ButtonColors;
-    autoFocus: boolean;
-    className: string;
-    overlay: ReactNode;
-    href: string;
-    iconAfter: ReactNode;
-    iconBefore: ReactNode;
-    isDisabled: boolean;
-    isSelected: boolean;
-    onBlur: React.FocusEventHandler<HTMLButtonElement> | undefined;
-    onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
-    onFocus: React.FocusEventHandler<HTMLButtonElement> | undefined;
-    spacing: keyof ButtonSpacings;
-    target: React.HTMLAttributeAnchorTarget | undefined;
-    type: ButtonType;
-    shouldFitContainer: boolean;
-    children: ReactNode;
-    testId: string;
-    component:
+    appearance?: keyof ButtonColors;
+    autoFocus?: boolean;
+    className?: string;
+    overlay?: ReactNode;
+    href?: string;
+    iconAfter?: ReactNode;
+    iconBefore?: ReactNode;
+    isDisabled?: boolean;
+    isSelected?: boolean;
+    onBlur?: React.FocusEventHandler<HTMLButtonElement> | undefined;
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onFocus?: React.FocusEventHandler<HTMLButtonElement> | undefined;
+    spacing?: keyof ButtonSpacings;
+    target?: React.HTMLAttributeAnchorTarget | undefined;
+    type?: ButtonType;
+    shouldFitContainer?: boolean;
+    children?: ReactNode;
+    testId?: string;
+    component?:
         | React.ElementType
         | React.ComponentType<React.AllHTMLAttributes<HTMLElement>>;
-    interactionName: string;
-    analyticsContext: Record<string, any>;
-    isLoading: boolean;
+    interactionName?: string;
+    analyticsContext?: Record<string, any>;
+    isLoading?: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({

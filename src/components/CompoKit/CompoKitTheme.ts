@@ -5,6 +5,7 @@ import { CompoKitButtonTheme } from "../Button/Button";
 import { CompoKitLozengeTheme } from "../Lozenge";
 import {  CompoKitProgressBarTheme } from "../ProgressBar/ProgressBar";
 import { CompoKitProgressIndicatorTheme } from "../ProgressIndicator/ProgressIndicator";
+import { CompoKitSectionMessage } from "../SectionMessage/SectionMessage";
 
 export interface CompoKitStateColors {
   default: string;
@@ -71,6 +72,8 @@ export interface CompoKitAppearances {
   moved: string;
   new: string;
   success: string;
+  information: string;
+  discovery: string;
 }
 
 export interface CompoKitSpacings {
@@ -88,5 +91,6 @@ export interface CompoKitTheme {
   avatar: CompoKitAvatarTheme;
   badge: CompoKitBadgeTheme;
   banner: CompoKitBannerTheme;
-  lozenge: CompoKitLozengeTheme
+  lozenge: CompoKitLozengeTheme;
+  sectionMessage: CompoKitSectionMessage
 }
