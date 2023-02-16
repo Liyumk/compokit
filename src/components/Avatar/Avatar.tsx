@@ -45,10 +45,7 @@ export interface AvatarPresenceSize
 export interface AvatarPresenceProps extends Omit<AvatarPresence, "base"> {}
 
 export interface AvatarSizes
-    extends Pick<
-        CompoKitSizes,
-        "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge"
-    > {}
+    extends Omit<AvatarPresenceSize, "base" | "innerBase"> {}
 
 export interface AvatarStatus
     extends Pick<CompoKitStatus, "approved" | "declined" | "locked"> {
@@ -85,7 +82,7 @@ export const Avatar: FC<AvatarProps> = ({
     name,
     presence,
     src,
-    size = "xxlarge",
+    size = "xlarge",
     status,
     tabIndex,
     target = "_blank",
@@ -171,8 +168,8 @@ export const Avatar: FC<AvatarProps> = ({
                     <div
                         className={classNames(
                             theme.status.base,
-                            size === "xlarge" && "top-3 right-1",
-                            size === "large" && "top-1 right-0",
+                            size === "xlarge" && theme.status.xlarge,
+                            size === "large" && theme.status.large,
                             theme.status[status]
                         )}
                     >
