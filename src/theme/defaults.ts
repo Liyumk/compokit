@@ -118,6 +118,26 @@ const theme : CompoKitTheme = {
   spacing: {compact: "h-7", default: "h-9", none: "h-auto px-0"},
   loading: "w-5 h-5 rounded-full animate-spin border-2 border-solid border-blue-500 border-t-transparent"
 },
+lozenge:{
+  base: "px-1.5 rounded-sm w-fit leading-4 uppercase overflow-hidden",
+  appearance: {
+    default: "text-slate-700 bg-slate-100 font-medium",
+    inprogress: "text-blue-700 bg-blue-100 font-medium",
+    moved: "text-yellow-700 bg-yellow-100 font-medium",
+    new: "text-indigo-700 bg-indigo-100 font-medium",
+    removed: "text-red-700 bg-red-100 font-medium",
+    success: "text-green-700 bg-green-100 font-medium",
+  },
+  isBoldAppearance: {
+    default: "text-white bg-slate-700 font-bold",
+    inprogress: "text-white bg-blue-700 font-bold",
+    moved: "text-white bg-yellow-700 font-bold",
+    new: "text-white bg-indigo-700 font-bold",
+    removed: "text-white bg-red-700 font-bold",
+    success: "text-white bg-green-700 font-bold",
+  }
+
+},
   progressBar:{
     root: {
     outer: "w-full h-1.5 rounded-lg relative overflow-hidden",
