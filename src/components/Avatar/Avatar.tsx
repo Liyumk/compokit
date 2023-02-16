@@ -21,9 +21,7 @@ export interface CompoKitAvatarTheme {
 }
 
 export interface AvatarAppearances
-    extends Pick<CompoKitAppearances, "circle" | "square"> {
-    [key: string]: string;
-}
+    extends Pick<CompoKitAppearances, "circle" | "square"> {}
 
 export interface AvatarPresence {
     base: string;

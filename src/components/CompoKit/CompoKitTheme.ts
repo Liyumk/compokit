@@ -1,4 +1,5 @@
 import { CompoKitAvatarTheme } from "../Avatar/Avatar";
+import { CompoKitBadgeTheme } from "../Badge";
 import { CompoKitButtonTheme } from "../Button/Button";
 import {  CompoKitProgressBarTheme } from "../ProgressBar/ProgressBar";
 import { CompoKitProgressIndicatorTheme } from "../ProgressIndicator/ProgressIndicator";
@@ -55,6 +56,12 @@ export interface CompoKitStatus {
 export interface CompoKitAppearances {
   circle: string;
   square: string;
+  added: string;
+  default: string;
+  important:string;
+  primary:string;
+  primaryInverted:string;
+  removed:string;
 }
 
 export interface CompoKitSpacings {
@@ -70,4 +77,5 @@ export interface CompoKitTheme {
   button: CompoKitButtonTheme;
   progressBar: CompoKitProgressBarTheme;
   avatar: CompoKitAvatarTheme;
+  badge: CompoKitBadgeTheme;
 }

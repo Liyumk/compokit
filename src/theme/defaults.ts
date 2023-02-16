@@ -69,6 +69,17 @@ const theme : CompoKitTheme = {
       locked: "bg-gray-500",  
     }
   },
+  badge:{
+    base: "w-fit px-1.5 rounded-xl text-xs ",
+    appearance: {
+      added: "bg-green-100 text-green-600",
+      default: "bg-blue-500 text-white",
+      important: "bg-red-500 text-white",
+      primary: "bg-blue-500 text-white",
+      primaryInverted: "bg-white text-blue-400",
+      removed: "bg-red-100 text-red-600",
+    }
+  },
    button: {
     base: "relative h-9 px-2.5 rounded font-medium flex items-center justify-between focus:outline-none",
       appearance: {
