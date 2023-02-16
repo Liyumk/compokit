@@ -62,6 +62,8 @@ const theme : CompoKitTheme = {
     },
     status:{
       base: "w-4 h-4 absolute top-0 -right-2 flex justify-center items-center rounded-full border border-white",
+      xlarge: 'top-3 right-1',
+      large: 'top-1 right-0',
       approved: "bg-green-500",
       declined: "bg-red-500",
       locked: "bg-gray-500",  
