@@ -196,6 +196,21 @@ lozenge:{
      
     }
   },
+  sectionMessage: {
+    base: "flex p-4 gap-x-4 rounded",
+    appearance: {
+      information: "bg-blue-200",
+      discovery: "bg-indigo-200",
+      error: "bg-red-200",
+      success: "bg-green-200",
+      warning:"bg-yellow-100"
+    },
+    left: "",
+    right: "flex flex-col gap-y-2 justify-between flex-1",
+    rightTop: "",
+    rightBottom: "mt-2",
+    title: "text-xl font-semibold"
+  }
 }
 
 export default theme;
