@@ -13,9 +13,9 @@ export interface BannerAppearance
     extends Pick<CompoKitAppearances, "warning" | "error" | "announcement"> {}
 
 export interface BannerProps extends PropsWithChildren {
-    appearance: keyof BannerAppearance;
-    icon: ReactElement;
-    testId: string;
+    appearance?: keyof BannerAppearance;
+    icon?: ReactElement;
+    testId?: string;
 }
 
 export const Banner: FC<BannerProps> = ({

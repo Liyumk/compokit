@@ -25,15 +25,15 @@ export interface LozengeStyle
     extends Pick<CSSProperties, "backgroundColor" | "color"> {}
 
 export interface LozengeProps extends PropsWithChildren {
-    appearance: keyof LozengeAppearance;
-    isBold: boolean;
-    maxWidth: number | string;
-    style: LozengeStyle;
-    testId: string;
+    appearance?: keyof LozengeAppearance;
+    isBold?: boolean;
+    maxWidth?: number | string;
+    style?: LozengeStyle;
+    testId?: string;
 }
 
 export const Lozenge: FC<LozengeProps> = ({
-    appearance,
+    appearance = "default",
     children,
     isBold,
     maxWidth,

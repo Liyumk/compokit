@@ -23,15 +23,15 @@ export interface BadgeStyle
     extends Pick<CSSProperties, "backgroundColor" | "color"> {}
 
 export interface BadgeProps {
-    appearance: keyof BadgeAppearance;
-    children: number | ReactNode;
-    max: number | false;
-    style: BadgeStyle;
-    testId: string;
+    appearance?: keyof BadgeAppearance;
+    children?: number | ReactNode;
+    max?: number | false;
+    style?: BadgeStyle;
+    testId?: string;
 }
 
 export const Badge: FC<BadgeProps> = ({
-    appearance,
+    appearance = "default",
     children,
     max = 99,
     style,

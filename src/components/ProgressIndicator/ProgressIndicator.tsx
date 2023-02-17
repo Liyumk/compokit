@@ -43,15 +43,15 @@ export interface ProgressIndicatorSpacings
 }
 
 export interface ProgressIndicatorProps {
-    selectedIndex: number;
+    selectedIndex?: number;
     values: any[];
-    appearance: keyof ProgressIndicatorAppearances;
-    ariaControls: string;
-    ariaLabel: string;
+    appearance?: keyof ProgressIndicatorAppearances;
+    ariaControls?: string;
+    ariaLabel?: string;
     onSelect?: () => void;
-    size: keyof ProgressIndicatorSizes;
-    spacing: keyof ProgressIndicatorSpacings;
-    testId: string;
+    size?: keyof ProgressIndicatorSizes;
+    spacing?: keyof ProgressIndicatorSpacings;
+    testId?: string;
 }
 
 export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
@@ -75,8 +75,8 @@ export const ProgressIndicator: FC<ProgressIndicatorProps> = ({
             {values &&
                 values.map((value, index) => (
                     <div
-                        aria-controls={ariaControls + index}
-                        aria-aria-label={ariaLabel + index}
+                        aria-controls={ariaControls && ariaControls + index}
+                        aria-aria-label={ariaLabel && ariaLabel + index}
                         defaultValue={value}
                         onClick={() => {
                             onSelect && onSelect();

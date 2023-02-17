@@ -51,23 +51,23 @@ export interface AvatarStatus
 }
 
 export interface AvatarProps extends PropsWithChildren {
-    appearance: keyof AvatarAppearances;
-    label: string;
-    borderColour: string;
-    href: string;
-    isDisabled: boolean;
-    name: string;
-    presence: keyof AvatarPresenceProps;
+    appearance?: keyof AvatarAppearances;
+    label?: string;
+    borderColour?: string;
+    href?: string;
+    isDisabled?: boolean;
+    name?: string;
+    presence?: keyof AvatarPresenceProps;
     src: string;
-    alt: string;
-    size: keyof AvatarSizes;
-    status: keyof AvatarStatus;
-    stackIndex: number;
-    tabIndex: number;
-    target: React.HTMLAttributeAnchorTarget | undefined;
-    onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
-    testId: string;
-    analyticsContext: Record<string, any>;
+    alt?: string;
+    size?: keyof AvatarSizes;
+    status?: keyof AvatarStatus;
+    stackIndex?: number;
+    tabIndex?: number;
+    target?: React.HTMLAttributeAnchorTarget | undefined;
+    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+    testId?: string;
+    analyticsContext?: Record<string, any>;
 }
 
 export const Avatar: FC<AvatarProps> = ({
@@ -136,7 +136,7 @@ export const Avatar: FC<AvatarProps> = ({
                     onClick={onClick}
                     style={{
                         border:
-                            borderColour?.length > 0
+                            borderColour && borderColour.length > 0
                                 ? `3px solid ${borderColour}`
                                 : "",
                     }}
