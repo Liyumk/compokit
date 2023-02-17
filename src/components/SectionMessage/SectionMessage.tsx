@@ -34,15 +34,15 @@ export interface SectionMessageAppearance
     > {}
 
 export interface SectionMessageProps extends PropsWithChildren {
-    appearance: keyof SectionMessageAppearance;
-    title: string;
-    actions: ReactElement[];
-    icon: ReactNode;
-    testId: string;
+    appearance?: keyof SectionMessageAppearance;
+    title?: string;
+    actions?: ReactElement[];
+    icon?: ReactNode;
+    testId?: string;
 }
 
 export const SectionMessage: FC<SectionMessageProps> = ({
-    appearance,
+    appearance = "information",
     children,
     title,
     actions,
