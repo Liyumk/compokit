@@ -3,6 +3,7 @@ import { CompoKitBadgeTheme } from "../Badge";
 import { CompoKitBannerTheme } from "../Banner/Banner";
 import { CompoKitButtonTheme } from "../Button/Button";
 import { CompoKitLozengeTheme } from "../Lozenge";
+import { CompoKitPageHeaderTheme } from "../PageHeader";
 import {  CompoKitProgressBarTheme } from "../ProgressBar/ProgressBar";
 import { CompoKitProgressIndicatorTheme } from "../ProgressIndicator/ProgressIndicator";
 import { CompoKitSectionMessage } from "../SectionMessage/SectionMessage";
@@ -93,4 +94,5 @@ export interface CompoKitTheme {
   banner: CompoKitBannerTheme;
   lozenge: CompoKitLozengeTheme;
   sectionMessage: CompoKitSectionMessage
+  pageHeader: CompoKitPageHeaderTheme
 }
