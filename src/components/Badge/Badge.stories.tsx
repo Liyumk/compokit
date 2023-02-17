@@ -15,6 +15,6 @@ export const DefaultProgressIndicator = Template.bind({});
 DefaultProgressIndicator.storyName = "Default";
 DefaultProgressIndicator.args = {
     appearance: "removed",
-    children: ["+23"],
+    children: ["23"],
     max: 34,
 };
