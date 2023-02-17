@@ -138,6 +138,16 @@ lozenge:{
   }
 
 },
+pageHeader:{
+  base: "",
+  titleAndAction: "flex gap-x-2 items-center",
+  title: {
+    base: "text-2xl flex-1 mt-1",
+    truncate: "truncate",
+  },
+  action: "flex gap-x-2",
+  bottomBar: "flex gap-x-2 mt-2"
+},
   progressBar:{
     root: {
     outer: "w-full h-1.5 rounded-lg relative overflow-hidden",
