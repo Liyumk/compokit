@@ -1,6 +1,5 @@
-/// <reference types="react" />
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { SectionMessageProps } from "./SectionMessage";
-declare const _default: ComponentMeta<(props: SectionMessageProps) => JSX.Element>;
+declare const _default: ComponentMeta<React.FC<import("./SectionMessage").SectionMessageProps>>;
 export default _default;
-export declare const Primary: ComponentStory<(props: SectionMessageProps) => JSX.Element>;
+export declare const DefaultProgressIndicator: ComponentStory<React.FC<import("./SectionMessage").SectionMessageProps>>;

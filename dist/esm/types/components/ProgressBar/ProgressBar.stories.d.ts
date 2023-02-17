@@ -1,6 +1,5 @@
-/// <reference types="react" />
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ProgressBarProps } from "./ProgressBar";
-declare const _default: ComponentMeta<({ value, showNumber }: ProgressBarProps) => JSX.Element>;
+declare const _default: ComponentMeta<React.FC<import("./ProgressBar").ProgressBarProps>>;
 export default _default;
-export declare const Primary: ComponentStory<({ value, showNumber }: ProgressBarProps) => JSX.Element>;
+export declare const DefaultProgressIndicator: ComponentStory<React.FC<import("./ProgressBar").ProgressBarProps>>;

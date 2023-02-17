@@ -1,6 +1,5 @@
-/// <reference types="react" />
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { AvatarProps } from "./Avatar";
-declare const _default: ComponentMeta<(props: AvatarProps) => JSX.Element>;
+declare const _default: ComponentMeta<React.FC<import("./Avatar").AvatarProps>>;
 export default _default;
-export declare const Primary: ComponentStory<(props: AvatarProps) => JSX.Element>;
+export declare const DefaultProgressIndicator: ComponentStory<React.FC<import("./Avatar").AvatarProps>>;

@@ -1,6 +1,5 @@
-/// <reference types="react" />
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ButtonProps } from "./Button";
-declare const _default: ComponentMeta<(props: ButtonProps) => JSX.Element>;
+declare const _default: ComponentMeta<React.FC<import("./Button").ButtonProps>>;
 export default _default;
-export declare const Primary: ComponentStory<(props: ButtonProps) => JSX.Element>;
+export declare const DefaultProgressIndicator: ComponentStory<React.FC<import("./Button").ButtonProps>>;
