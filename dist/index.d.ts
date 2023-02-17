@@ -189,9 +189,9 @@ interface PageHeaderTitle {
     truncate: string;
 }
 interface PageHeaderProps extends PropsWithChildren {
-    actions?: ReactElement;
-    bottomBar?: ReactElement;
-    breadCrumbs?: ReactElement;
+    actions?: ReactElement | ReactElement[];
+    bottomBar?: ReactElement | ReactElement[];
+    breadCrumbs?: ReactElement | ReactElement[];
     disableTitleStyle?: boolean;
     truncateTitle?: boolean;
     innerRef?: (e: any) => undefined;
