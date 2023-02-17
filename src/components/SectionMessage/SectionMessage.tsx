@@ -1,50 +1,113 @@
-import React, { ReactNode } from "react";
-import { IconWrapper, SectionMsgContainer } from "./SectionMessage.styled";
-import GlobalStyleWrapper from "../GlobalStyleWrapper/GlobalStyleWrapper";
-import { appearanceConverter } from "../../utils/appearanceConverter";
-import { Appearance, AppearanceValue } from "../../common/types";
-import { AiOutlineInfoCircle } from "react-icons/ai";
-import { MdOutlineDangerous } from "react-icons/md";
-import { TiTick } from "react-icons/ti";
-import { AiFillWarning } from "react-icons/ai";
+import React, {
+    ElementType,
+    FC,
+    PropsWithChildren,
+    ReactElement,
+    ReactNode,
+} from "react";
+import { CompoKitAppearances } from "../CompoKit/CompoKitTheme";
+import {
+    AiFillAccountBook,
+    AiFillInfoCircle,
+    AiFillQuestionCircle,
+    AiFillWarning,
+} from "react-icons/ai";
+import { MdReportGmailerrorred } from "react-icons/md";
+import classNames from "classnames";
+import { useTheme } from "../../hooks/useTheme";
+import { TiInfo, TiTick, TiWarning } from "react-icons/ti";
 
-export interface SectionMessageProps {
-    children: ReactNode;
-    appearance?: Appearance;
+export interface CompoKitSectionMessage {
+    base: string;
+    appearance: SectionMessageAppearance;
+    left: string;
+    right: string;
+    rightTop: string;
+    rightBottom: string;
+    title: string;
 }
 
-const SectionMessage = (props: SectionMessageProps) => {
-    const { children, appearance } = props;
+export interface SectionMessageAppearance
+    extends Pick<
+        CompoKitAppearances,
+        "information" | "warning" | "error" | "success" | "discovery"
+    > {}
 
-    const appearConverted = appearanceConverter(appearance);
+export interface SectionMessageProps extends PropsWithChildren {
+    appearance?: keyof SectionMessageAppearance;
+    title?: string;
+    actions?: ReactElement[];
+    icon?: ReactNode;
+    testId?: string;
+}
 
-    const IconProvider = () => {
+export const SectionMessage: FC<SectionMessageProps> = ({
+    appearance = "information",
+    children,
+    title,
+    actions,
+    icon,
+    testId,
+}) => {
+    const theme = useTheme().theme.sectionMessage;
+
+    const appearanceIcon = () => {
+        const icoSize = 26;
         switch (appearance) {
-            case "danger":
-                return <MdOutlineDangerous size={30}></MdOutlineDangerous>;
-            case "idle":
-                return null;
-            case "info":
-                return <AiOutlineInfoCircle size={30}></AiOutlineInfoCircle>;
+            case "information":
+                return (
+                    <AiFillInfoCircle
+                        size={icoSize}
+                        className="text-blue-600"
+                    ></AiFillInfoCircle>
+                );
             case "success":
-                return <TiTick size={30}></TiTick>;
+                return (
+                    <div>
+                        <TiTick size={icoSize}></TiTick>
+                    </div>
+                );
+            case "discovery":
+                return (
+                    <AiFillQuestionCircle
+                        size={icoSize}
+                        className="text-indigo-500"
+                    ></AiFillQuestionCircle>
+                );
+            case "error":
+                return (
+                    <MdReportGmailerrorred
+                        size={icoSize}
+                        className="text-red-500"
+                    ></MdReportGmailerrorred>
+                );
             case "warning":
-                return <AiFillWarning size={30}></AiFillWarning>;
+                return (
+                    <AiFillWarning
+                        size={icoSize}
+                        className="text-orange-500"
+                    ></AiFillWarning>
+                );
             default:
-                return null;
+                return;
         }
     };
 
     return (
-        <GlobalStyleWrapper>
-            <SectionMsgContainer appearanceValue={appearConverted}>
-                <IconWrapper>
-                    <IconProvider></IconProvider>
-                </IconWrapper>
-                <div>{children}</div>
-            </SectionMsgContainer>
-        </GlobalStyleWrapper>
+        <div
+            data-testid={testId}
+            className={classNames(theme.base, theme.appearance[appearance])}
+        >
+            <div className={classNames(theme.left)}>
+                {icon ? icon : appearanceIcon()}
+            </div>
+            <div className={classNames(theme.right)}>
+                <div className={theme.title}>{title}</div>
+                {children}
+                <div className={classNames("w-fit flex gap-x-2")}>
+                    {actions}
+                </div>
+            </div>
+        </div>
     );
 };
-
-export default SectionMessage;
