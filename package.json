@@ -8,10 +8,13 @@
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=61f68c023dd8"
   },
   "keywords": [],
-  "author": "Liyu Mesfn",
+  "author": {
+    "name": "Liyu Mesfn"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -67,5 +70,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@storybook/addon-postcss": "^2.0.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@liyumk/custom-react-component-library@0.1.0"
 }
