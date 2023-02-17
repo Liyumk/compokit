@@ -114,7 +114,7 @@ const theme : CompoKitTheme = {
     before: "mr-1",
     after: "ml-1"
   },
-  overlay: "flex items-center justify-center absolute top-0 left-0 w-full h-full bg-black/70 rounded",
+  overlay: "flex items-center justify-center absolute top-0 left-0 w-full h-full bg-gray-200 rounded text-slate-600",
   spacing: {compact: "h-7", default: "h-9", none: "h-auto px-0"},
   loading: "w-5 h-5 rounded-full animate-spin border-2 border-solid border-blue-500 border-t-transparent"
 },
