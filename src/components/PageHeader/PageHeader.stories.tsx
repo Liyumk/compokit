@@ -17,4 +17,7 @@ export const DefaultProgressIndicator = Template.bind({});
 DefaultProgressIndicator.storyName = "Default";
 DefaultProgressIndicator.args = {
     children: "Lorem ipsum test title",
+    actions: <>Action one</>,
+    breadCrumbs: [<>Bottom bar one</>, <>Bottom bar two</>],
+    bottomBar: [<>Bottom bar one</>, <>Bottom bar two</>],
 };
