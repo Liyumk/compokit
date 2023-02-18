@@ -69,7 +69,8 @@
   },
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@storybook/addon-postcss": "^2.0.0"
+    "@storybook/addon-postcss": "^2.0.0",
+    "@tiaanduplessis/pkg-rename": "^1.0.1"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@liyumk/custom-react-component-library@0.1.0"
