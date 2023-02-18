@@ -1,9 +1,9 @@
 {
-  "name": "@liyumk/custom-react-component-library",
+  "name": "@liyumk/compokit",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/liyumk"
   },
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "A simple custom React component libraries",
   "scripts": {
     "rollup": "rollup -c",

@@ -5,12 +5,14 @@ CompoKit is a collection of React UI components, accompanied by Tailwind CSS uti
 
 [![Screenshot of flowbite-react.com](https://i.postimg.cc/Ghs5662Q/Screenshot-2023-02-18-171941.jpg)](https://postimg.cc/2VrGZcnb)
 
+
+
 ## Installation
 
 Install CompoKit with npm
 
 ```bash
-  npm install @liyumk/custom-react-component-library
+  npm install @liyumk/compokit
 ```
     
 ## Demo
