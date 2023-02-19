@@ -12,7 +12,7 @@ CompoKit is a collection of React UI components, accompanied by Tailwind CSS uti
 Install CompoKit with npm
 
 ```bash
-  npm install @liyumk/compokit
+npm install @liyumk/compokit
 ```
     
 ## Demo
