@@ -18,4 +18,4 @@ Install CompoKit with npm
 ## Demo
 You can take a look at the components here:
 http://bit.ly/3IB9qyk
-
+<video src='https://share.vidyard.com/watch/jsZVxesWHYW96LMhzbnajG?' width=180/>
