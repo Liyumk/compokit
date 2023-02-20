@@ -17,7 +17,7 @@ npm install @liyumk/compokit
     
 ## Demo
 You can take a look at the components here:
-http://bit.ly/3IB9qyk
+[Storybook/compokit](https://master--cheerful-toffee-7fc075.netlify.app/)
 
 https://user-images.githubusercontent.com/57185816/219936947-b4d2b1d2-e937-4948-a283-78d094502b37.mp4
 
